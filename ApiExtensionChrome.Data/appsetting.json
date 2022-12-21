@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "OnlineShopNew": "Server=.;Database=OnlineShopDb;Trusted_Connection=True;"
+  }
+}

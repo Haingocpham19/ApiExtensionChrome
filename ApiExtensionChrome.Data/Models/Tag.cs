@@ -5,12 +5,11 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace ApiExtensionChrome.Models
+namespace ApiExtensionChrome.Data.Models
 {
-    public partial class AdminLogin
+    public partial class Tag
     {
-        public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
 }

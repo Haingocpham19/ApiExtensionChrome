@@ -1,9 +1,14 @@
 ﻿using ApiExtensionChrome.ModelEx;
-using ApiExtensionChrome.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,63 +17,37 @@ namespace ApiExtensionChrome.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class ValuesController : ControllerBase
     {
-        logindbContext context = new logindbContext();
-        // GET: api/<ValuesController>
-        [HttpGet]
-        public List<AdminLogin> ListAll()
+        private IConfiguration _config;
+        public ValuesController(IConfiguration config)
         {
-            return new AdminLoginDao().ListUser();
+            _config = config;
         }
-        // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public List<AdminLogin> Edit(int id)
+        [HttpPost("getname")]
+        public String GetName()
         {
-            return new AdminLoginDao().GetUserById(id);
-        }
-        // POST api/<ValuesController>
-        [HttpPost]
-        public bool Create([FromBody] AdminLogin value)
-        {
-            if (ModelState.IsValid)
+            if (User.Identity.IsAuthenticated)
             {
-                var dao = new AdminLoginDao();
-                long id = dao.Insert(value);
-                if (id > 0)
+                var identity = User.Identity as ClaimsIdentity;
+                if (identity != null)
                 {
-                    return true;
+                    IEnumerable<Claim> claims = identity.Claims;
                 }
-                else
-                {
-                    return false;
-                }
+                return "Valid";
             }
-            return false;
-        }
-        // PUT api/<ValuesController>/5
-        [HttpPut("{id}")]
-        public bool Update([FromRoute]int id,[FromBody] AdminLogin value)
-        {           
-            var existingUser = context.AdminLogin.FirstOrDefault(x => x.Id == id);
-            if (existingUser != null)
+            else
             {
-                value.UserName = value.UserName;
-                value.Password = value.Password;
-                context.SaveChanges();
-                return true;
+                return "Invalid";
             }
-            return false;
         }
-        // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
-        public bool Delete(int id)
+        [HttpPost("getAccountId")]
+        public Object GetAccountId()
         {
-            AdminLoginDao dao = new AdminLoginDao();
-            if (dao.Delete(id)) {
-                return true;
-            };
-            return false;
+            var accessToken = Request.Headers["Authorization"];
+            var accountId = new ValidateToken(_config).ValidateJwtToken(accessToken);
+            return accountId;
         }
     }
 }

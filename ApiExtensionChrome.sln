@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31410.357
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExtensionChrome", "ApiExtensionChrome\ApiExtensionChrome.csproj", "{9AD157C5-9FCB-4E64-8315-26C9EA968204}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiExtensionChrome", "ApiExtensionChrome\ApiExtensionChrome.csproj", "{9AD157C5-9FCB-4E64-8315-26C9EA968204}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiExtensionChrome.Data", "ApiExtensionChrome.Data\ApiExtensionChrome.Data.csproj", "{E0AF473C-AA95-4CBB-A31C-725292C7C006}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiExtensionChrome.Application", "ApiExtensionChrome.Application\ApiExtensionChrome.Application.csproj", "{744D48C8-B5F0-4516-A6ED-4FB62083426C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiExtensionChrome.Utilities", "ApiExtensionChrome.Utilities\ApiExtensionChrome.Utilities.csproj", "{576EFF00-5D76-4C76-82D4-B41AC6C06EBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiExtensionChrome.ViewModel", "ApiExtensionChrome.ViewModel\ApiExtensionChrome.ViewModel.csproj", "{5CE43CB0-FC18-4B7C-B14B-F9F03F0BA2EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{9AD157C5-9FCB-4E64-8315-26C9EA968204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AD157C5-9FCB-4E64-8315-26C9EA968204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AD157C5-9FCB-4E64-8315-26C9EA968204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0AF473C-AA95-4CBB-A31C-725292C7C006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0AF473C-AA95-4CBB-A31C-725292C7C006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0AF473C-AA95-4CBB-A31C-725292C7C006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0AF473C-AA95-4CBB-A31C-725292C7C006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744D48C8-B5F0-4516-A6ED-4FB62083426C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744D48C8-B5F0-4516-A6ED-4FB62083426C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744D48C8-B5F0-4516-A6ED-4FB62083426C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744D48C8-B5F0-4516-A6ED-4FB62083426C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{576EFF00-5D76-4C76-82D4-B41AC6C06EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576EFF00-5D76-4C76-82D4-B41AC6C06EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{576EFF00-5D76-4C76-82D4-B41AC6C06EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{576EFF00-5D76-4C76-82D4-B41AC6C06EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CE43CB0-FC18-4B7C-B14B-F9F03F0BA2EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE43CB0-FC18-4B7C-B14B-F9F03F0BA2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE43CB0-FC18-4B7C-B14B-F9F03F0BA2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE43CB0-FC18-4B7C-B14B-F9F03F0BA2EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
